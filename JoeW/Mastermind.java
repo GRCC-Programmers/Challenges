@@ -1,19 +1,23 @@
+//we have to import a few things to generate a pseudorandom number and to handle inputs
 import java.util.Scanner;
 import java.util.Random;
 
 public class Mastermind {
     public static void main(String[] args) {
-        //create a random object so we can get a random number for the array
+        //This will give us a psuedorandom number to pull an item from the chosen array
+        //effectively giving us a random word
         Random rand = new Random();
-        //scanners are how Java handles input
+        //These scanners will handle input later on. You can, but should not recycle scanners if possible.
+        //Furthermore, we're getting strings and ints. It's cleaner to just use different scanners.
         Scanner input = new Scanner(System.in);
         Scanner choice = new Scanner(System.in);
-        //Nothing special, setting up arrays and variables
+        //Typical var stuff.
         String guess;
         String chosenWord = "";
         int usrChoice;
         int guesses = 4;
-        int correctLetters = 0;
+        int correctLetters = 0, correctCounter = 0;
+        int size = 0;
         int randN = rand.nextInt(5);
         String easyWords[];
         easyWords = new String[5];
@@ -23,6 +27,7 @@ public class Mastermind {
         hardWords = new String[5];
         String vHardWords[];
         vHardWords = new String[5];
+        char correctGuesses[];
         easyWords[0] = "tune";
         easyWords[1] = "bald";
         easyWords[2] = "unit";
@@ -44,43 +49,70 @@ public class Mastermind {
         vHardWords[3] = "demonstration";
         vHardWords[4] = "constellation";
 
-        //Allow the user to choose their poison. I didn't feel like dealing with strings, so choice is in integer.
+        //We're asking the user for input and getting that input via Scanner.
         System.out.println("What difficulty would you like? (0 = Easy, 1 = Intermediate, 2 = Hard, 3 = Very Hard)");
         usrChoice = choice.nextInt();
-    
-        //This is so that the word the user has to guess will be appropriate to the difficulty chosen.
+
+        //This will get a random word from the relevant array,
+        //make the array I use to display correct guesses the appropriate size,
+        //and give the user a hint as to how long the word will be.
         if(usrChoice == 0){
             chosenWord = easyWords[randN];
+            size = 4;
+            System.out.print("_ _ _ _");
         } else if(usrChoice == 1) {
             chosenWord = medWords[randN];
+            size = 7;
+            System.out.print("_ _ _ _ _ _ _");
         } else if(usrChoice == 2) {
             chosenWord = hardWords[randN];
+            size = 10;
+            System.out.print("_ _ _ _ _ _ _ _ _ _");
         } else if(usrChoice == 3) {
             chosenWord = vHardWords[randN];
+            size = 13;
+            System.out.print("_ _ _ _ _ _ _ _ _ _ _ _ _");
         }
 
-        //We want to end the game if the user hasn't guessed the word in 4 tries. 
-        //This will also let the user know how many guesses they have left and how many letters they got correct.
-        //The instructions were lenient in terms of information given to the player/user.
+
+            //This will allow us to set the array we use for guesses to the appropriate size.
+            //Regardless of size of word chosen.
+            correctGuesses = new char[size];
+
         while(guesses > 0) {
-            System.out.println("Guess? (" + guesses + " left)" + " and " + correctLetters + " letters correct.");
+            //We're just getting user's guess here.
+            System.out.println("\nGuess? (" + guesses + " left)" + " and " + correctLetters + " letters correct.");
             guess = input.next();
 
-            //This compares the strings between the word chosen by the random number generator
-            //and the user inputs as their guess. It will tell them how many letters they got right.
+            //This helps keep the winning condition honest. 
+            correctCounter = 0;
+
+            //This makes it easier to display correct guesses in their place of the chosen word.
             for(int i = 0; i < guess.length(); ++i) {
                 if(guess.charAt(i) == chosenWord.charAt(i)) {
-                    ++correctLetters;
+                    ++correctCounter;
+                    correctGuesses[i] = chosenWord.charAt(i);
+                } else {
+                    correctGuesses[i] = '_';
                 }
             }
-                //This will terminate if in 4 tries they fail to guess the letter.
-                //While it's not the best winning condition I think it's sufficient here.
-                if(correctLetters != chosenWord.length()) {
+                //If the word you guess has as many correct letters in the same spot as the chosen word then you win. This is why we
+                //set the variable to 0. To try and minimize false positives. 
+                if(correctCounter != chosenWord.length()) {
                     --guesses;
                 } else {
                     System.out.println("Congratulations!");
                     break;
                 }
+
+                //Just an easy way of iterating through the correct guesses array and displaying the contents.
+                for(int i = 0; i < size; ++i)
+                    System.out.print(correctGuesses[i] + " ");
+            
+                //This allows me to keep the correct guess count, change it only if it improves, and trigger the game winning 
+                //condition in the event of a fully correct guess.
+                if(correctCounter > 0 || correctCounter > correctLetters)
+                    correctLetters = correctCounter;
         }
 
     }

@@ -59,21 +59,25 @@ public class Mastermind {
         if(usrChoice == 0){
             chosenWord = easyWords[randN];
             size = 4;
+            //iterate through the array for easy words and output the contents of the easy word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(easyWords[i]);
         } else if(usrChoice == 1) {
             chosenWord = medWords[randN];
             size = 7;
+            //iterate through the array for intermediate/medium words and output the contents of the easy word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(medWords[i]);
         } else if(usrChoice == 2) {
             chosenWord = hardWords[randN];
             size = 10;
+            //iterate through the array for hard words and output the contents of the easy word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(hardWords[i]);
         } else if(usrChoice == 3) {
             chosenWord = vHardWords[randN];
             size = 13;
+            //iterate through the array for very hard words and output the contents of the easy word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(vHardWords[i]);
         }

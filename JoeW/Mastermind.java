@@ -59,19 +59,23 @@ public class Mastermind {
         if(usrChoice == 0){
             chosenWord = easyWords[randN];
             size = 4;
-            System.out.print("_ _ _ _");
+            for(int i = 0; i < 5; ++i)
+                System.out.println(easyWords[i]);
         } else if(usrChoice == 1) {
             chosenWord = medWords[randN];
             size = 7;
-            System.out.print("_ _ _ _ _ _ _");
+            for(int i = 0; i < 5; ++i)
+                System.out.println(medWords[i]);
         } else if(usrChoice == 2) {
             chosenWord = hardWords[randN];
             size = 10;
-            System.out.print("_ _ _ _ _ _ _ _ _ _");
+            for(int i = 0; i < 5; ++i)
+                System.out.println(hardWords[i]);
         } else if(usrChoice == 3) {
             chosenWord = vHardWords[randN];
             size = 13;
-            System.out.print("_ _ _ _ _ _ _ _ _ _ _ _ _");
+            for(int i = 0; i < 5; ++i)
+                System.out.println(vHardWords[i]);
         }
 
 

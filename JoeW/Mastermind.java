@@ -106,7 +106,8 @@ public class Mastermind {
 
             //This makes it easier to display correct guesses in their place of the chosen word.
             for(int i = 0; i < guess.length(); ++i) {
-                if(guess.charAt(i) == chosenWord.charAt(i)) {
+                //Casting char as an int allows me to compare ASCII values, which allows me to ignore the case of a letter.
+                if((int)guess.charAt(i) == (int)chosenWord.charAt(i) || (32 + (int)guess.charAt(i)) == (int)chosenWord.charAt(i))
                     ++correctCounter;
                     //This stops the array from giving away the word if you have not merely guessed a correct letter
                     //that previously was incorrect.

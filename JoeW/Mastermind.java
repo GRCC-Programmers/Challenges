@@ -91,9 +91,14 @@ public class Mastermind {
             for(int i = 0; i < guess.length(); ++i) {
                 if(guess.charAt(i) == chosenWord.charAt(i)) {
                     ++correctCounter;
-                    correctGuesses[i] = chosenWord.charAt(i);
+                    //This stops the array from giving away the word if you have not merely guessed a correct letter
+                    //that previously was incorrect.
+                    if(correctCounter > correctLetters)
+                        correctGuesses[i] = chosenWord.charAt(i);
                 } else {
-                    correctGuesses[i] = '_';
+                    //This stops the array from being cleared out everytime you haven't gotten the answer right the first time.
+                    if(correctGuesses[i] == '\0')
+                        correctGuesses[i] = '_';
                 }
             }
                 //If the word you guess has as many correct letters in the same spot as the chosen word then you win. This is why we

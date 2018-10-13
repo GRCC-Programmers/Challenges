@@ -23,6 +23,8 @@ public class Mastermind {
         easyWords = new String[5];
         String medWords[];
         medWords = new String[5];
+        String avgWords[];
+        avgWords = new String[5];
         String hardWords[];
         hardWords = new String[5];
         String vHardWords[];
@@ -38,6 +40,11 @@ public class Mastermind {
         medWords[2] = "seminar";
         medWords[3] = "central";
         medWords[4] = "council";
+        avgWords[0] = "therapist";
+        avgWords[1] = "clearance";
+        avgWords[2] = "performer";
+        avgWords[3] = "radiation";
+        avgWords[4] = "expertise";
         hardWords[0] = "vegetarian";
         hardWords[1] = "particular";
         hardWords[2] = "acceptance";
@@ -50,7 +57,7 @@ public class Mastermind {
         vHardWords[4] = "constellation";
 
         //We're asking the user for input and getting that input via Scanner.
-        System.out.println("What difficulty would you like? (0 = Easy, 1 = Intermediate, 2 = Hard, 3 = Very Hard)");
+        System.out.println("What difficulty would you like? (0 = Easy, 1 = Intermediate, 2 = Average, 3 = Hard, 4 = Very Hard)");
         usrChoice = choice.nextInt();
 
         //This will get a random word from the relevant array,
@@ -59,25 +66,27 @@ public class Mastermind {
         if(usrChoice == 0){
             chosenWord = easyWords[randN];
             size = 4;
-            //iterate through the array for easy words and output the contents of the easy word array.
+            //iterate through array outputting contents
             for(int i = 0; i < 5; ++i)
                 System.out.println(easyWords[i]);
         } else if(usrChoice == 1) {
             chosenWord = medWords[randN];
             size = 7;
-            //iterate through the array for intermediate/medium words and output the contents of the medium word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(medWords[i]);
         } else if(usrChoice == 2) {
+            chosenWord = avgWords[randN];
+            size = 9;
+            for(int i = 0; i < 5; ++i)
+                System.out.println(avgWords[i]);
+        } else if(usrChoice == 3) {
             chosenWord = hardWords[randN];
             size = 10;
-            //iterate through the array for hard words and output the contents of the hard word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(hardWords[i]);
-        } else if(usrChoice == 3) {
+        } else if(usrChoice == 4) {
             chosenWord = vHardWords[randN];
             size = 13;
-            //iterate through the array for very hard words and output the contents of the very hard word array.
             for(int i = 0; i < 5; ++i)
                 System.out.println(vHardWords[i]);
         }

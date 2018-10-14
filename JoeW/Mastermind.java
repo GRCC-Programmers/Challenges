@@ -83,7 +83,7 @@ public class Mastermind {
                     //that previously was incorrect.
                     if(correctCounter > correctLetters)
                         correctGuesses[i] = chosenWord.charAt(i);
-                } else {
+                     else {
                     //This stops the array from being cleared out everytime you haven't gotten the answer right the first time.
                     if(correctGuesses[i] == '\0')
                         correctGuesses[i] = '_';

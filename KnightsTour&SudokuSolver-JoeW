@@ -66,7 +66,9 @@ Then we concatenate the results:
 Which corresponds with: (4,2).
 
 While the potential performance gained makes it an attractive choice I am unsure if it is necessary. It might also make things
-significantly more simple.
+significantly more simple. All of this makes the idea of a unique class with coordinate based objects attractive. Manipulation could be
+included into the class as a set of functions based on the type of movement in order to make things easier. It could also include
+variables that make sense in name to make it obvious which ones are being manipulated whenever manipulation occurs.
 
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 

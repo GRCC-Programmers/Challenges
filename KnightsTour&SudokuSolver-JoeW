@@ -90,7 +90,9 @@ problem.
 
 The fact we have to be concerned about runtime performance and the similarities in terms of data structures of Sudoku boards and 
 Knight's Tours boards means this may also provide an easier way to compare coordinates and calculate the final score of the program.
-Definitely something worth considering because we're working on a Cartesian plane in both cases. 
+Furthermore, you could create a method within the class to set the values of each Sudoku square, if you're concerned about having
+no other use for the class outside of calculation of the final score. Really though, there would be nothing stopping you from making
+very readable and functional code. I think.
 
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 

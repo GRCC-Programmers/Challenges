@@ -99,6 +99,11 @@ to play with the tree in this manner and optimize performance.
                                                     
                                                |0|      |1|     |2|     |3|     |4|     |5|     |6|
                                              |("4,0")|("3,9")|("3,8")|("3,7")|("4,1")|("4,2")|("4,3")|
+                                              
+                                              or
+                                              
+                                                 |0|     |1|     |2|     |3|     |4|     |5|     |6|
+                                              |("4,0")|("4,1")|("4,2")|("4,3")|("3,9")|("3,8")|("3,7")|
                                                     
                                              The same dataset represented a BST and an array. In the order of which the data would be
                                              accessed in the BST. The coordinate pairs represent nodes in the BST and (4,0) is the BST's

@@ -84,8 +84,8 @@ consideration because overall it is going to work better than a 1d array and qui
 There is also the cost of memory, I suppose, but it comes out to a whole 324 bytes. Unless I remember incorrect an integer
 is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
 insertion and is highly efficient as a search tool. Although, it is likely I will lean more towards the guarantee of a BST with a
-runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, I choose to balance the tree by choosing the 45th 
-coordinate pair and separating things by whether they are larger or smaller than 45. In this case the use of value as the move of the 
+runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, I choose to balance the tree by choosing the 40th 
+coordinate pair and separating things by whether they are larger or smaller than 40. In this case the use of value as the move of the 
 knight is no longer redundant, either. Since in that case I could no longer rely on the position of the node within the tree. The end 
 result should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in 
 the middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine

@@ -88,6 +88,10 @@ However, once I solve the Knight's Tour, assuming I have already solved the Sudo
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 
 problem. 
 
+The fact we have to be concerned about runtime performance and the similarities in terms of data structures of Sudoku boards and 
+Knight's Tours boards means this may also provide an easier way to compare coordinates and calculate the final score of the program.
+Definitely something worth considering because we're working on a Cartesian plane in both cases. 
+
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 
 This actually makes the problem far more approachable than it may initially seem.

@@ -85,15 +85,15 @@ There is also the cost of memory, I suppose, but it comes out to a whole 324 byt
 is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
 insertion and is highly efficient as a search tool. Although, it is likely I will lean more towards the guarantee of a BST with a
 runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, I choose to balance the tree by choosing the 45th 
-coordinate pair and separating things by whether they are larger or smaller than 45. In this case the use of value as the move of the knight
-is no longer redundant, either. Since in that case I could no longer rely on the position of the node within the tree. The end result
-should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in the
-middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
+coordinate pair and separating things by whether they are larger or smaller than 45. In this case the use of value as the move of the 
+knight is no longer redundant, either. Since in that case I could no longer rely on the position of the node within the tree. The end 
+result should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in 
+the middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
 to change the coordinate pair of the root node. 
 
 An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 
- as worrisome as relying on the unsorted order of moves later on when we go to compare coordinate pairs. 
+ as worrisome as relying on the unsorted or implied by its index order of moves later on when we go to compare coordinate pairs.
 
 For example:
 

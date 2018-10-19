@@ -64,7 +64,7 @@ For example, if I wanted to move 2 spaces up and one space to the right from (2,
 2 + 2 = 4
 1 + 1 = 2
 Then we concatenate the results:
-(4,2).
+42 or (4,2).
 
 While the potential performance gained makes it an attractive choice I am unsure if it is necessary. It might also make things
 significantly more simple.

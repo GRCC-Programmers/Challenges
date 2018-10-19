@@ -72,6 +72,11 @@ quicker than searching an unsorted array and make the whole process far easier l
 of values allows us to use a BST for Sudoku too without fear of repeating values. Then when we compute score we'll just compare keys of
 each BST and get the value from the Sudoku BST.
 
+The only downside I see is that the value would be redundant because of the use of a BST. However, searching through an unsorted array
+could take many loops to compare all the values. Whereas, this way we can make a single run through a BST without having to implement
+a sort algorithm independent of the array. While it may seem like more work it is actually a lot less than what the equivalent with
+an array would require.
+
 For example:
 
 class Coordinates {

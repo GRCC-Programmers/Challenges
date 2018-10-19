@@ -49,21 +49,21 @@ because it is straightforward. However, there is another solution. Rather than r
 with a little math and clever work I can knock down the array requirement. A pattern I have only recently noticed that works well for
 this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
 
-(0,0) 
+("0,0") 
 '0' + '0' = 00
-(2,1)
+("2,1")
 '2' + '1' = 21
 
 This is only a little impractical due to the values under 10, but removal of the leading zero in that case is easily performed with logic.
 Since all moves are represented as changes in coordinates in Warnsdorff's algorithm it would make no difference in the end result. 
 
-For example, if I wanted to move 2 spaces up and one space to the right from (2,1), I could do the following operation:
-(2,1)
+For example, if I wanted to move 2 spaces up and one space to the right from ("2,1"), I could do the following operation:
+("2,1")
 2 + 2 = 4
 1 + 1 = 2
 Then I concatenate the results:
 '4' + '2' = 42
-Which corresponds with: (4,2).
+Which corresponds with: ("4,2").
 
 This idea is attractive because it introduces the possibility of using a BST (Binary Search Tree) instead of a vanilla array, where
 the key is the set of coordinates and the value is the move of the knight. While BSTs can be rather complex the boards could be 

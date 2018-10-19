@@ -3,13 +3,12 @@ is to identify the steps involved. The problem is basically, I am trying to solv
 A "Knight's Tour" is a type of problem where the knight must traverse a board of n^2 size, touch every square, and never retouch another 
 square. There are three possibilities, the tour can end on the square it started, the tour can end on a square where it didn't start, 
 and no solution. Even when one sort of solution exists, the other may not. It is important to note though, that someone analyzed this 
-problem enough to create a piecewise function determining the outcome of an attempted tour based on n. You can find the paper here: 
-http://gaebler.us/share/Knight_tour.html
+problem enough to create a piecewise function determining the outcome of an attempted tour based on n.[1]
 
 There are parts of the problem I can essentially ignore, including solving either board since programs and algorithms already exist. 
 The most popular ones based on what I have found are an implementation of the Dancing Links algorithm created by Don Knuth, and the 
 Warnsdorff Algorithm, which seeks to choose Knight's Tours moves based on which one will have the least subsequent moves to satisfy a 
-valid answer. However, according to another academic paper Warnsdorff's Algorithm runs in linear time. You can think of this as being 
+valid answer. However, according to another academic paper[2] Warnsdorff's Algorithm runs in linear time. You can think of this as being 
 a(n), where n is the amount of checks required to solve the problem. I would typically prefer log(n) but that is not always possible. 
 Even in cases where it is possible I have not always found the algorithm that satisfies this runtime. However, if you're familiar with 
 log graphs you can probably already tell it would scale better as n grows. The algorithm for each move performs up to 8 checks for each 
@@ -43,3 +42,7 @@ problem.
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 
 This actually makes the problem far more approachable than it may initially seem. 
+
+Sources:
+[1] http://gaebler.us/share/Knight_tour.html
+[2] http://math.oregonstate.edu/~math_reu/proceedings/REU_Proceedings/Proceedings2004/2004Ganzfried.pdf

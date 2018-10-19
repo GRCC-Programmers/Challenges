@@ -121,11 +121,24 @@ to play with the tree in this manner and optimize performance.
                                                     
                                                |0|   |1|  |2|  |3|  |4|  |5|  |6|
                                               |(40)|(39)|(38)|(37)|(41)|(42)|(43)|
+                                              
+                                              or
+                                              
+                                               |0|  |1|  |2|  |3|  |4|  |5|  |6|
+                                              |(40)|(41)|(42)|(43)|(39)|(38)|(37)|
                                              The same dataset as above with concatenated coordinate pairs. To represent how they would
                                              they would be stored. This demonstration is also meant to show how dangerous it is to
                                              rely on order of an array alone to keep track of moves. We merely have an order that 
                                              can be easily changed, and cumbersome to work with in many ways.
-                                                    
+                                             
+                                              My earlier example ignored the fact that how a search traverses a tree is dependent on
+                                              the desired key and its relationship with the root node (greater or less than). This
+                                              feature of BSTs makes them powerful in their searching because in some applications you
+                                              can ignore half the tree and quickly nail down what you're looking for. It is
+                                              analogous to looking in a particular range of a sorted array for a given element. However,
+                                              you would likely have to create such a function yourself based on the structure of the
+                                              array and logic, whereas all that extra work is unecessary here.
+                                              
 An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 
  as worrisome as relying on the unsorted or implied by its index order of moves later on when we go to compare coordinate pairs.

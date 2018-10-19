@@ -78,7 +78,7 @@ a sort algorithm independent of the array. While it may seem like more work it i
 an array would require. For example, even though quicksort is very quick it would require a fully array before it could run.
 Furthermore, it is independent of the array and unless I use a string array or a custom object array the value or key is lost, assuming
 I seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never have, and I don't think I want to if I can avoid it.
-However, if quicksort or a good sorting array would be broken by a 2d array or nd array, where n > 1 then BSTs require serious
+However, if quicksort or a good sorting array would be broken by a 2d array or xd array, where x > 1 then BSTs require serious
 consideration because overall it is going to work better than a 1d array and quicksort for this operation. 
 
 There is also the cost of memory, I suppose, but it comes out to a whole 324 bytes. Unless I remember incorrect an integer
@@ -97,9 +97,9 @@ m = n/2.
 In this case midpoint is the average of the count of indices and elements in the array, not the actual midpoint that computer scientists
 or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both. A true
 midpoint would be misleading due to the differences in geometry in this problem. While we think of a board as a plane, the computer
-will ultimately store the information in a linear fashion. We cannot balance an array where n is odd since the above equation will not 
-return a whole number. In that case rounding up or down should not have much effect. The tree will be pretty well balanced either way, 
-which is our goal to maximize performance.
+will ultimately store the information in a linear fashion, even if we use a 2d or xd array where x > 1. We cannot perfectly balance a 
+BST where n is odd since the above equation will not return a whole number. In that case rounding up or down should not have much effect. 
+The tree will be pretty well balanced either way, which is our goal to maximize performance.
 
                                                             ("4,0")
                                                               {5}

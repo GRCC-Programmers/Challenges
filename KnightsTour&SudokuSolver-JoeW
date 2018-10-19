@@ -96,7 +96,9 @@ max = the end of the array
 m = max/2.
 
 In this case midpoint is the average of the count of indices and elements in the array, not the actual midpoint that computer scientists
-or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both.
+or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both. We cannot
+balance an array where n is odd since the above equation will not return a whole number. In that case rounding up or down should not
+have much effect. The tree will be pretty well balanced either way, which is our goal to maximize performance.
 
                                                             ("4,0")
                                                               {5}

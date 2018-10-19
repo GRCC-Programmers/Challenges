@@ -90,6 +90,14 @@ knight is no longer redundant, either. Since in that case I could no longer rely
 result should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in 
 the middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
 to change the coordinate pair of the root node. 
+
+Let m = midpoint
+max = the end of the array
+m = max/2.
+
+In this case midpoint is the average of the count of indices and elements in the array, not the actual midpoint that computer scientists
+or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both.
+
                                                             ("4,0")
                                                               {5}
                                                           /           \

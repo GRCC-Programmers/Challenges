@@ -36,13 +36,29 @@ operations involved in "gluing" together any solutions will run at a constant or
 careful because it is easy for this problem to get an exponential runtime, which scales very poorly. Which is why instead of physically 
 gluing them together in memory it is probably more efficient to work through them as though they are a single array. 
 
+Furthermore, all of this work is done on the Cartesian coordinates plane. Every move is made relative of a given position on the board
+and Warnsdorff's Algorithm reflects this in how it processes movements. Using a 2d array typically makes this math much more easy
+because it is straightforward. However, there is another solution. Rather than representing the board in multiple 2d arrays,
+with a little math and clever work we can knock down the array requirement. A pattern I have only recently noticed that works well for
+this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
+(0,0) 
+0 + 0
+00
+(2,1)
+2 + 1
+21
+
+This is only a little impractical due to the values under 10, but removal of the leading zero in that case is easily performed with logic.
+Since all moves are represented as changes in coordinates in Warnsdorff's algorithm it would make no difference in the end result. 
+However, the performance gained makes it an attractive idea. Since I still have not tried this stuff it could be overkill. I am unsure.
+
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 
 problem. 
 
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 
-This actually makes the problem far more approachable than it may initially seem. 
+This actually makes the problem far more approachable than it may initially seem.
 
 Sources:
 [1] http://gaebler.us/share/Knight_tour.html

@@ -75,7 +75,9 @@ each BST and get the value from the Sudoku BST.
 The only downside I see is that the value would be redundant because of the use of a BST. However, searching through an unsorted array
 could take many loops to compare all the values. Whereas, this way we can make a single run through a BST without having to implement
 a sort algorithm independent of the array. While it may seem like more work it is actually a lot less than what the equivalent with
-an array would require.
+an array would require. For example, even though quicksort is very quick it would require a fully array before it could run.
+Furthermore, it is independent of the array and unless we use a string array or a custom object array the value or key is lost, assuming
+we seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never have, and I don't think I want to if I can avoid it.
 
 For example:
 

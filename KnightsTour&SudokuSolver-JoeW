@@ -144,6 +144,15 @@ to play with the tree in this manner and optimize performance.
                                               you would likely have to create such a function yourself based on the structure of the
                                               array and logic, whereas all that extra work is unecessary here.
                                               
+Another advantage here with the red-black BST is the breakdown of nodes into groups. My initial plan with Warnsdorff's algorithm
+involved several arrays, but it is likely I could substitute those arrays for 2-3 nodes. All of a sudden I have a single data 
+structure that seems to represent what I drew out on paper and solved prior to the presentation or all these notes. Which in itself,
+seems to solve many complicated issues in approaching this problem. That will come down to proper implementation of Warnsdorff's 
+algorithm on my behalf, but if possible would improve performance dramatically and make things a bit easier to follow on the backend.
+Ideally, I want to perform as little gluing as possible while maintaining a solution that is accurate and valid. Attempting to run
+up the score for me is irrelevant, and really any score would be a way of showing I pulled this off successfully if it is both valid
+and acceptable. 
+                                              
 An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 
  as worrisome as relying on the unsorted or implied by its index order of moves later on when we go to compare coordinate pairs.

@@ -91,6 +91,10 @@ should also get us closer to the average of 1.39 log N, instead of N. Of course,
 middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
 to change the coordinate pair of the root node. 
 
+An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
+values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 
+ as worrisome as relying on the unsorted order of moves later on when we go to compare coordinate pairs. 
+
 For example:
 
 class Coordinates {

@@ -78,6 +78,8 @@ a sort algorithm independent of the array. While it may seem like more work it i
 an array would require. For example, even though quicksort is very quick it would require a fully array before it could run.
 Furthermore, it is independent of the array and unless we use a string array or a custom object array the value or key is lost, assuming
 we seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never have, and I don't think I want to if I can avoid it.
+However, if quicksort or a good sorting array would be broken by a 2d array or nd array, where n > 1 then BSTs require serious
+consideration because overall it is going to work better than a 1d array and quicksort for this operation. 
 
 For example:
 

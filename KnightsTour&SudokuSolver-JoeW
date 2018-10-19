@@ -68,7 +68,9 @@ Which corresponds with: (4,2).
 This idea is attractive because it introduces the possibility of using a BST (Binary Search Tree) instead of a vanilla array, where
 the key is the set of coordinates and the value is the move of the knight. While BSTs can be rather complex the boards could be 
 glued together with a negligible performance cost, due to the highly optimized runtime of BSTs. This would make comparison later on
-quicker than searching an unsorted array and make the whole process far easier later on.
+quicker than searching an unsorted array and make the whole process far easier later on. Furthermore, using coordinates for keys instead
+of values allows us to use a BST for Sudoku too without fear of repeating values. Then when we compute score we'll just compare keys of
+each BST and get the value from the Sudoku BST.
 
 For example:
 

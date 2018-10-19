@@ -83,24 +83,10 @@ consideration because overall it is going to work better than a 1d array and qui
 
 There is also the cost of memory, I suppose, but it comes out to a whole 324 bytes. Unless I remember incorrect an integer
 is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
-insertion and is highly efficient as a search tool. Although, it is likely I will lean more towards the guarantee of a BST with a
-runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, I choose to balance the tree by choosing the 40th 
-coordinate pair and separating things by whether they are larger or smaller than 40. In this case the use of value as the move of the 
-knight is no longer redundant, either. Since in that case I could no longer rely on the position of the node within the tree. The end 
-result should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in 
-the middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
-to change the coordinate pair of the root node. 
-
-Let m = midpoint
-m = n/2.
-
-In this case midpoint is the average of the count of indices and elements in the array, not the actual midpoint that computer scientists
-or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both. A true
-midpoint would be misleading due to the differences in geometry in this problem. While we think of a board as a plane, the computer
-will ultimately store the information in a linear fashion, even if we use a 2d or xd array where x > 1 that resembles a matrix in how 
-data is accessed. We cannot perfectly balance a BST where n is odd since the above equation will not return a whole number. In that case 
-rounding up or down should not have much effect. The tree will be pretty well balanced either way, which is our goal to maximize 
-performance.
+insertion and is highly efficient as a search tool. However, with a red-black BST I can get a performance of log N. Unfortunately, it 
+will not be easy and some functionality, including deletion would be omitted because I'm too cheap to buy a book. However, it is 
+necessary to traverse the hypothetical board as quickly as possible and store all move counts. Using the value as move counts allows me 
+to play with the tree in this manner and optimize performance. 
 
                                                             ("4,0")
                                                               {5}

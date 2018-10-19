@@ -124,7 +124,9 @@ to change the coordinate pair of the root node.
                                                |0|   |1|  |2|  |3|  |4|  |5|  |6|
                                               |(40)|(39)|(38)|(37)|(41)|(42)|(43)|
                                              The same dataset as above with concatenated coordinate pairs. To represent how they would
-                                             they would be stored.
+                                             they would be stored. This demonstration is also meant to show how dangerous it is to
+                                             rely on order of an array alone to keep track of moves. We merely have an order that 
+                                             can be easily changed, and cumbersome to work with in many ways.
                                                     
 An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 

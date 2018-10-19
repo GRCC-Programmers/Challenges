@@ -31,10 +31,10 @@ n = 81
 81 = (3x10) + (3x10) + (3x7)
 
 It is important that this math adds up correctly because it means I can let a1 = (3x20) or 60, and a2 = (3x7) or 21 with no loss of 
-squares. While Warnsdorff's Algorithm runs in linear time, many operations involved in "gluing" together any solutions will run at a 
-constant or slightly quicker linear rate. However, I also must be careful because it is easy for this problem to get an exponential 
-runtime, which scales very poorly. Which is why instead of physically gluing them together in memory it is probably more efficient
-to work through them as though they are a single array. 
+squares because in this case each index would represent an individual square. While Warnsdorff's Algorithm runs in linear time, many 
+operations involved in "gluing" together any solutions will run at a constant or slightly quicker linear rate. However, I also must be 
+careful because it is easy for this problem to get an exponential runtime, which scales very poorly. Which is why instead of physically 
+gluing them together in memory it is probably more efficient to work through them as though they are a single array. 
 
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 

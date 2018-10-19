@@ -105,6 +105,8 @@ to change the coordinate pair of the root node.
                                              The same dataset represented a BST and an array. In the order of which the data would be
                                              accessed in the BST. The coordinate pairs represent nodes in the BST and (4,0) is the BST's
                                              root node. The brackets under the keys in the BST demo represent the values of those nodes.
+                                             The value in this case is the number of knights moves it takes to reach that coordinate
+                                             pair from the starting point, not necessarily the coordinate pair of the root node.
                                              In the array they represent an element. The zero-based index of each element in the array is 
                                              denoted above it and encapsulated in pipes.
                                              I have come to realize that recording move order would not necessarily be redundant, if

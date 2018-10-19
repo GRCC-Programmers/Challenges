@@ -46,7 +46,7 @@ As long as 60 is a legal move from 59 and would be represented as such on the ou
 Furthermore, all of this work is done on the Cartesian coordinates plane. Every move is made relative of a given position on the board
 and Warnsdorff's Algorithm reflects this in how it processes movements. Using a 2d array typically makes this math much more easy
 because it is straightforward. However, there is another solution. Rather than representing the board in multiple 2d arrays,
-with a little math and clever work we can knock down the array requirement. A pattern I have only recently noticed that works well for
+with a little math and clever work I can knock down the array requirement. A pattern I have only recently noticed that works well for
 this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
 
 (0,0) 
@@ -61,7 +61,7 @@ For example, if I wanted to move 2 spaces up and one space to the right from (2,
 (2,1)
 2 + 2 = 4
 1 + 1 = 2
-Then we concatenate the results:
+Then I concatenate the results:
 '4' + '2' = 42
 Which corresponds with: (4,2).
 
@@ -69,24 +69,24 @@ This idea is attractive because it introduces the possibility of using a BST (Bi
 the key is the set of coordinates and the value is the move of the knight. While BSTs can be rather complex the boards could be 
 glued together with a negligible performance cost, due to the highly optimized runtime of BSTs. This would make comparison later on
 quicker than searching an unsorted array and make the whole process far easier later on. Furthermore, using coordinates for keys instead
-of values allows us to use a BST for Sudoku too without fear of repeating values. Then when we compute score we'll just compare keys of
+of values allows us to use a BST for Sudoku too without fear of repeating values. Then when I compute score I'll just compare keys of
 each BST and get the value from the Sudoku BST.
 
 The only downside I see is that the value would be redundant because of the use of a BST. However, searching through an unsorted array
-could take many loops to compare all the values. Whereas, this way we can make a single run through a BST without having to implement
+could take many loops to compare all the values. Whereas, this way I can make a single run through a BST without having to implement
 a sort algorithm independent of the array. While it may seem like more work it is actually a lot less than what the equivalent with
 an array would require. For example, even though quicksort is very quick it would require a fully array before it could run.
-Furthermore, it is independent of the array and unless we use a string array or a custom object array the value or key is lost, assuming
-we seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never have, and I don't think I want to if I can avoid it.
+Furthermore, it is independent of the array and unless I use a string array or a custom object array the value or key is lost, assuming
+I seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never have, and I don't think I want to if I can avoid it.
 However, if quicksort or a good sorting array would be broken by a 2d array or nd array, where n > 1 then BSTs require serious
 consideration because overall it is going to work better than a 1d array and quicksort for this operation. 
 
 There is also the cost of memory, I suppose, but it comes out to a whole 324 bytes. Unless I remember incorrect an integer
 is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
-insertion and is highly efficient as a search tool. Although, it is likely we will lean more towards the guarantee of a BST with a
-runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, we choose to balance the tree by choosing the 45th 
+insertion and is highly efficient as a search tool. Although, it is likely I will lean more towards the guarantee of a BST with a
+runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, I choose to balance the tree by choosing the 45th 
 coordinate and separating things by whether they are larger or smaller than 45. In this case the use of value as the move of the knight
-is no longer redundant, either. Since in that case we could no longer rely on the position of the node within the tree. The end result
+is no longer redundant, either. Since in that case I could no longer rely on the position of the node within the tree. The end result
 should also get us closer to the average of 1.39 log N, instead of N. 
 
 For example:

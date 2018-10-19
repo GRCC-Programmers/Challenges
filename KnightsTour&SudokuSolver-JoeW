@@ -50,11 +50,9 @@ with a little math and clever work we can knock down the array requirement. A pa
 this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
 
 (0,0) 
-'0' + '0'
-00
+'0' + '0' = 00
 (2,1)
-'2' + '1'
-21
+'2' + '1' = 21
 
 This is only a little impractical due to the values under 10, but removal of the leading zero in that case is easily performed with logic.
 Since all moves are represented as changes in coordinates in Warnsdorff's algorithm it would make no difference in the end result. 

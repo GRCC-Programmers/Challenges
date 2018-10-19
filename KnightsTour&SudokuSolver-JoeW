@@ -41,6 +41,7 @@ and Warnsdorff's Algorithm reflects this in how it processes movements. Using a 
 because it is straightforward. However, there is another solution. Rather than representing the board in multiple 2d arrays,
 with a little math and clever work we can knock down the array requirement. A pattern I have only recently noticed that works well for
 this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
+
 (0,0) 
 0 + 0
 00

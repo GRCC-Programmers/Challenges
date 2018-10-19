@@ -90,17 +90,17 @@ knight is no longer redundant, either. Since in that case I could no longer rely
 result should also get us closer to the average of 1.39 log N, instead of N. Of course, I am assuming that the tour will not start in 
 the middle of the board. IFF it does then we will verge closer to the guarantee, but in that case I can also implement logic I imagine
 to change the coordinate pair of the root node. 
-                                                          (4,0)
+                                                          ("4,0")
                                                            {5}
-                                                          /   \
-                                                      (3,9)    (4,1)
-                                                        {3}      {10}
-                                                       /  \     /  \
-                                                    (3,8)(3,7)(4,2) (4,3)
-                                                     {43} {21} {65}  {72}
+                                                          /           \
+                                                      ("3,9")        ("4,1")
+                                                        {3}            {10}
+                                                       /  \            /    \
+                                                  ("3,8")("3,7")   ("4,2") ("4,3")
+                                                     {43} {21}       {65}    {72}
                                                     
-                                               |0|   |1|   |2|   |3|   |4|   |5|   |6|
-                                             |(4,0)|(3,9)|(3,8)|(3,7)|(4,1)|(4,2)|(4,3)|
+                                               |0|      |1|     |2|     |3|     |4|     |5|     |6|
+                                             |("4,0")|("3,9")|("3,8")|("3,7")|("4,1")|("4,2")|("4,3")|
                                                     
                                              The same dataset represented a BST and an array. In the order of which the data would be
                                              accessed in the BST. The coordinate pairs represent nodes in the BST and (4,0) is the BST's

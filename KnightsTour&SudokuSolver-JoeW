@@ -21,8 +21,8 @@ satisfy the requirement. Furthermore, the rules asked for the output of 9x9 boar
 involved simple math around a complicated topic.
 
 Let n = number of squares
-a1 = array 1
-a2 = array 2
+a1 = Number of indices of array 1
+a2 = Number of indices of array 2
 
 n = 9^2
 n = 81

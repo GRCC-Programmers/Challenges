@@ -88,13 +88,29 @@ will not be easy and some functionality, including deletion would be omitted bec
 necessary to traverse the hypothetical board as quickly as possible and store all move counts. Using the value as move counts allows me 
 to play with the tree in this manner and optimize performance. 
 
-                                                            ("3,0" && "7,4")
-                                                       /           |             \
-                                                ("2,9")         ("3,5")          ("8,1")
-                                                  {3}            /   \            {80}
-                                                /       \    ("3,3") ("3,4")    /       \
-                                            ("2,8")   ("2,7")  {22}    {34}  ("7,8")   ("7,9")
-                                              {43}      {21}                  {65}       {72}
+                                                            ("4,0")
+                                                              {5}
+                                                          /           \
+                                                      ("3,9")        ("4,1")
+                                                        {3}            {10}
+                                                       /  \            /    \
+                                                  ("3,8")("3,7")   ("4,2") ("4,3")
+                                                     {43} {21}       {65}    {72}
+                                                     
+                                                |0|     |1|     |2|     |3|     |4|     |5|     |6|
+                                             |("4,0")|("3,9")|("3,8")|("3,7")|("4,1")|("4,2")|("4,3")|
+                                              
+                                              or
+                                              
+                                                 |0|     |1|     |2|     |3|     |4|     |5|     |6|
+                                              |("4,0")|("4,1")|("4,2")|("4,3")|("3,9")|("3,8")|("3,7")|
+                                                    
+                                             The same dataset represented a BST and an array. In the order of which the data would be
+                                             accessed in the BST. The coordinate pairs represent nodes in the BST and (4,0) is the BST's
+                                             root node. The brackets under the keys in the BST demo represent the values of those nodes.
+                                             In the array they represent an element. The zero-based index of each element in the array is 
+                                             denoted above it and encapsulated in pipes. Recording move order would not necessarily be 
+                                             redundant, if the BST is balanced. The structure of the node is powerful here.
                                                     
                                              A dataset represented in the order of which the data would be accessed in the BST. The 
                                              coordinate pairs represent nodes in the BST and (3,0 && 7,4) is the BST's root node. The 
@@ -104,16 +120,27 @@ to play with the tree in this manner and optimize performance.
                                              In the array they represent an element. Recording move order would not necessarily be 
                                              redundant, if the BST is balanced. The structure of the node is powerful here. 
 
-                                                            (30 && 74)
-                                                       /           |             \
-                                                   (29)          (35)            (81)
-                                                  {3}            /   \            {80}
-                                                /       \     (33)   (34)       /       \
-                                               (28)   (27)    {22}    {34}   (78)      (79)
-                                              {43}    {21}                   {65}       {72}
+                                                          (40)
+                                                           {5}
+                                                          /   \
+                                                       (39)    (41)
+                                                        {3}     {10}
+                                                       /  \     /  \
+                                                    (38) (37) (42) (43)
+                                                     {43} {21} {65}  {72}
+                                                    
+                                               |0|   |1|  |2|  |3|  |4|  |5|  |6|
+                                              |(40)|(39)|(38)|(37)|(41)|(42)|(43)|
+                                              
+                                              or
+                         
+                                                |0|  |1|  |2|  |3|  |4|  |5|  |6|
+                                              |(40)|(41)|(42)|(43)|(39)|(38)|(37)|
                                               
                                              The same dataset as above with concatenated coordinate pairs. To represent how they would
-                                             they would be stored. I am too lazy and tired to create an array equivalent.
+                                             they would be stored. This demonstration is also meant to show how dangerous it is to
+                                             rely on order of an array alone to keep track of moves. We merely have an order that 
+                                             can be easily changed, and cumbersome to work with in many ways.
                                              
                                               My earlier example ignored the fact that how a search traverses a tree is dependent on
                                               the desired key and its relationship with the root node (greater or less than). This

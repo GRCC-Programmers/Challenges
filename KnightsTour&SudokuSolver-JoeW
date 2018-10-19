@@ -81,6 +81,14 @@ we seek to avoid a 2d array. I imagine you could quicksort a 2d array, I never h
 However, if quicksort or a good sorting array would be broken by a 2d array or nd array, where n > 1 then BSTs require serious
 consideration because overall it is going to work better than a 1d array and quicksort for this operation. 
 
+There is also the cost of memory, I suppose, but it comes out to a whole 324 bytes. Unless I remember incorrect an integer
+is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
+insertion and is highly efficient as a search tool. Although, it is likely we will lean more towards the guarantee of a BST with a
+runtime of N rather than 1.39 log N, due to its final geometric shape. Unless, we choose to balance the tree by choosing the 45th 
+coordinate and separating things by whether they are larger or smaller than 45. In this case the use of value as the move of the knight
+is no longer redundant, either. Since in that case we could no longer rely on the position of the node within the tree. The end result
+should also get us closer to the average of 1.39 log N, instead of N. 
+
 For example:
 
 class Coordinates {

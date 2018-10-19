@@ -70,6 +70,20 @@ significantly more simple. All of this makes the idea of a unique class with coo
 included into the class as a set of functions based on the type of movement in order to make things easier. It could also include
 variables that make sense in name to make it obvious which ones are being manipulated whenever manipulation occurs.
 
+For example:
+
+class Coordinates {
+//initializing variables
+int x = 0;
+int y = 0;
+
+void moveUpTwoRightOne() {}
+
+void moveUpTwoLeftOne() {}
+
+... and so on for all 8 possible moves.
+}
+
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 
 problem. 

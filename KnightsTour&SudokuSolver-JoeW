@@ -51,6 +51,14 @@ this problem is that the concatenation of coordinates would give the index of a 
 
 This is only a little impractical due to the values under 10, but removal of the leading zero in that case is easily performed with logic.
 Since all moves are represented as changes in coordinates in Warnsdorff's algorithm it would make no difference in the end result. 
+
+For example, if I wanted to move 2 spaces up and one space to the right from (2,1), I could do the following operation:
+(2,1)
+2 + 2 = 4
+1 + 1 = 2
+Then we concatenate the results:
+(4,2).
+
 However, the performance gained makes it an attractive idea. Since I still have not tried this stuff it could be overkill. I am unsure.
 
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 

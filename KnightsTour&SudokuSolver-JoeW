@@ -50,10 +50,10 @@ with a little math and clever work we can knock down the array requirement. A pa
 this problem is that the concatenation of coordinates would give the index of a coordinate on a 2d plane.
 
 (0,0) 
-0 + 0
+'0' + '0'
 00
 (2,1)
-2 + 1
+'2' + '1'
 21
 
 This is only a little impractical due to the values under 10, but removal of the leading zero in that case is easily performed with logic.
@@ -61,10 +61,11 @@ Since all moves are represented as changes in coordinates in Warnsdorff's algori
 
 For example, if I wanted to move 2 spaces up and one space to the right from (2,1), I could do the following operation:
 (2,1)
-2 + 2 = 4
-1 + 1 = 2
+2 + 2 = '4'
+1 + 1 = '2'
 Then we concatenate the results:
-42 or (4,2).
+'4' + '2' = 42
+Which corresponds with: (4,2).
 
 While the potential performance gained makes it an attractive choice I am unsure if it is necessary. It might also make things
 significantly more simple.

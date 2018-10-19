@@ -11,9 +11,9 @@ Warnsdorff Algorithm, which seeks to choose Knight's Tours moves based on which 
 valid answer. However, according to another academic paper[2] Warnsdorff's Algorithm runs in linear time. You can think of this as being 
 a(n), where n is the amount of checks required to solve the problem and a is the constant variable. Computer Scientists would typically 
 prefer log(n) but that is not always possible. Even in cases where it is possible computer scientists have not always found the algorithm
-that satisfies this runtime. However, if you're familiar with log graphs you can probably already tell it would scale better as n grows. The algorithm 
-for each move performs up to 8 checks for each possible move in each scenario. For smaller boards this is fine but will quickly become 
-a problem. As a result, I need to find a solution that does not require such a massive board.
+that satisfies this runtime. However, if you're familiar with log graphs you can probably already tell it would scale better as n grows.
+The algorithm for each move performs up to 8 checks for each possible move in each scenario. For smaller boards this is fine but will 
+quickly become a problem. As a result, I need to find a solution that does not require such a massive board.
 
 Therefore, a possible solution is to break down the board into several "smaller" boards that are connected or glued together. However, 
 with this approach things get complicated very quickly. You must keep track of every knight's move and ensure each move would still 

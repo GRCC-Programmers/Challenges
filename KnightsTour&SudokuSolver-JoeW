@@ -97,9 +97,10 @@ m = n/2.
 In this case midpoint is the average of the count of indices and elements in the array, not the actual midpoint that computer scientists
 or mathematicians would think of. However, I hope we can overlook things a little bit because in this case it is sort of both. A true
 midpoint would be misleading due to the differences in geometry in this problem. While we think of a board as a plane, the computer
-will ultimately store the information in a linear fashion, even if we use a 2d or xd array where x > 1. We cannot perfectly balance a 
-BST where n is odd since the above equation will not return a whole number. In that case rounding up or down should not have much effect. 
-The tree will be pretty well balanced either way, which is our goal to maximize performance.
+will ultimately store the information in a linear fashion, even if we use a 2d or xd array where x > 1 that resembles a matrix in how 
+data is accessed. We cannot perfectly balance a BST where n is odd since the above equation will not return a whole number. In that case 
+rounding up or down should not have much effect. The tree will be pretty well balanced either way, which is our goal to maximize 
+performance.
 
                                                             ("4,0")
                                                               {5}

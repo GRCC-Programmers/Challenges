@@ -61,8 +61,8 @@ Since all moves are represented as changes in coordinates in Warnsdorff's algori
 
 For example, if I wanted to move 2 spaces up and one space to the right from (2,1), I could do the following operation:
 (2,1)
-2 + 2 = '4'
-1 + 1 = '2'
+2 + 2 = 4
+1 + 1 = 2
 Then we concatenate the results:
 '4' + '2' = 42
 Which corresponds with: (4,2).

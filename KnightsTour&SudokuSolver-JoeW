@@ -109,6 +109,20 @@ to change the coordinate pair of the root node.
                                              denoted above it and encapsulated in pipes.
                                              I have come to realize that recording move order would not necessarily be redundant, if
                                              the BST is balanced. The structure of the node is powerful here.
+                                             
+                                                          (40)
+                                                           {5}
+                                                          /   \
+                                                       (39)    (41)
+                                                        {3}     {10}
+                                                       /  \     /  \
+                                                    (38) (37) (42) (43)
+                                                     {43} {21} {65}  {72}
+                                                    
+                                               |0|   |1|  |2|  |3|  |4|  |5|  |6|
+                                              |(40)|(39)|(38)|(37)|(41)|(42)|(43)|
+                                             The same dataset as above with concatenated coordinate pairs. To represent how they would
+                                             they would be stored.
                                                     
 An iterated value is also required to ensure the comparison is done correctly. We can use an iterated count to compare against
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 

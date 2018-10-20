@@ -85,17 +85,17 @@ There is also the cost of memory, I suppose, but it comes out to a whole 324 byt
 is just 4 bytes and there would be 81 redundnat integers. That is a very small footprint for a data structure that remains sorted upon
 insertion and is highly efficient as a search tool. However, with a red-black BST I can get a performance of log N. Unfortunately, it 
 will not be easy and some functionality, including deletion would be omitted because I'm too cheap to buy a book. However, it is 
-necessary to traverse the hypothetical board as quickly as possible and store all move counts. Using the value as move counts allows me 
-to play with the tree in this manner and optimize performance. 
+necessary to traverse the hypothetical board as quickly as possible and store all horizontal and vertical move counts from origin. Using the 
+value as horizontal and vertical move counts allows me to play with the tree in this manner and optimize performance. 
 
                                                             ("4,0")
-                                                              {5}
+                                                              {5,3}
                                                           /           \
                                                       ("3,9")        ("4,1")
-                                                        {3}            {10}
+                                                       {13,14}        {10,32}
                                                        /  \            /    \
                                                   ("3,8")("3,7")   ("4,2") ("4,3")
-                                                     {43} {21}       {65}    {72}
+                                                  {43,11} {21,43}     {65,54}    {72,21}
                                                      
                                                 |0|     |1|     |2|     |3|     |4|     |5|     |6|
                                              |("4,0")|("3,9")|("3,8")|("3,7")|("4,1")|("4,2")|("4,3")|
@@ -119,6 +119,8 @@ to play with the tree in this manner and optimize performance.
                                              pair from the starting point, not necessarily the coordinate pair of the root node.
                                              In the array they represent an element. Recording move order would not necessarily be 
                                              redundant, if the BST is balanced. The structure of the node is powerful here. 
+                                             The values will not change from above, but changing that part is simply too much work for
+                                              me.
 
                                                           (40)
                                                            {5}

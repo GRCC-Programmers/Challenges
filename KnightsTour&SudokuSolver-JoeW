@@ -188,6 +188,11 @@ a stronger computer would be required for a significantly higher n, but as long 
 outside of Knight's Tour that have similar rules. If I am working this hard to solve a problem, I would like an answer I can generalize
 with relative ease.
 
+For this part I am going to use a resizing array or dynamic array. The array will be sat at half the maximum size required, 4, and shrink
+or grow as necessary. The loop will stop iterating the moment it comes across a bad (empty) index. This is required because the design 
+I intend to use is not in the Java library. Java's implementation of dynamic arrays allow little control over memory for the purpose
+they serve and run poorly in comparison. I will share the slides on Stack.
+
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 
 This actually makes the problem far more approachable than it may initially seem.

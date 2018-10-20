@@ -197,8 +197,10 @@ be used. Defeating the purpose of using an implementation I have to write myself
 my use of loops, which is the purpose of all this. In cases where they are unavoidable I want them to terminate as quickly as possible. 
 
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
-boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 
-This actually makes the problem far more approachable than it may initially seem.
+boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. However, I will likely have
+to deal with a 2d array for formatting and output. The expanded coordinate pairs could serve to put the moves into the correct spots.
+Unfortunately, this could be the most taxing part of the solution. Fortunately, we only have to do this for output of the board because
+in order to insert values into the 2d array I will loop through the BST.
 
 Sources:
 [1] http://gaebler.us/share/Knight_tour.html

@@ -184,7 +184,9 @@ and if that one fails determine the other two are not necessary and move onto a 
 second then we can ignore the third. My understanding of the algorithm is that we are then to look for a tiebreaker by finding the
 move that will require the fewest moves thereafter to traverse the board and satisfy all the rules. Since I do not know the minimum
 required to solve a 9x9 board, my goal is to make this algorithm scale as efficiently as possible. It is still possible that eventually
-a stronger computer would be required for a significantly higher n, but as long as that n > 81, I am happy.
+a stronger computer would be required for a significantly higher n, but as long as that n > 81, I am happy. There are also problems 
+outside of Knight's Tour that have similar rules. If I am working this hard to solve a problem, I would like an answer I can generalize
+with relative ease.
 
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 

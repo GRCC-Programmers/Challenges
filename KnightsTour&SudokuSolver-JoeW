@@ -182,7 +182,9 @@ Looking through this algorithm I found for the Warnsdorff Algorithm in Java, I n
 of moves when it is unnecessary. It works, yes, but it also abuses memory. We can perform the check that is the most likely to fail
 and if that one fails determine the other two are not necessary and move onto a different move. If it passes the first but fails the 
 second then we can ignore the third. My understanding of the algorithm is that we are then to look for a tiebreaker by finding the
-move that will require the fewest moves thereafter to traverse the board and satisfy all the rules.
+move that will require the fewest moves thereafter to traverse the board and satisfy all the rules. Since I do not know the minimum
+required to solve a 9x9 board, my goal is to make this algorithm scale as efficiently as possible. It is still possible that eventually
+a stronger computer would be required for a significantly higher n, but as long as that n > 81, I am happy.
 
 Lastly, the issue of outputting a 9x9 board comes up because I am using 3xn boards. I believe that it is possible to daisy chain 3x3 
 boards like how Sudoku is solved. Thereby giving the impression of a board that does not actually exist. 

@@ -154,29 +154,15 @@ An iterated value is also required to ensure the comparison is done correctly. W
 values, even though this is not necessarily the default use of a BST. However, this is not as cumbersome as a 2d array or 
  as worrisome as relying on the unsorted or implied by its index order of moves later on when we go to compare coordinate pairs.
 
-For example:
-
-class Coordinates {
-//initializing variables
-int x = 0;
-int y = 0;
-
-void moveUpTwoRightOne() {}
-
-void moveUpTwoLeftOne() {}
-
-... and so on for all 8 possible moves.
-}
-
 However, once I solve the Knight's Tour, assuming I have already solved the Sudoku board the only task would be to compare coordinates 
 against one another. If I are careful here though I can keep the runtime down low enough that a laptop such as mine can solve the 
 problem. 
 
 The fact we have to be concerned about runtime performance and the similarities in terms of data structures of Sudoku boards and 
 Knight's Tours boards means this may also provide an easier way to compare coordinates and calculate the final score of the program.
-Furthermore, you could create a method within the class to set the values of each Sudoku square, if you're concerned about having
-no other use for the class outside of calculation of the final score. Really though, there would be nothing stopping you from making
-very readable and functional code. I think.
+Furthermore, creating a class just for the transformation of points, checking the validity of moves, and so on may prove useful.
+Throwing everything into main will not get far. Every implementation I've seen of the algorithm though does the same, so this is
+not a unique thought. 
 
 Looking through this algorithm I found for the Warnsdorff Algorithm in Java, I notice that several arrays are used to check the validity
 of moves when it is unnecessary. It works, yes, but it also abuses memory. We can perform the check that is the most likely to fail

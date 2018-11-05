@@ -25,7 +25,7 @@ public class Mastermind {
         String hardWords[] = {"vegetarian", "particular", "acceptance", "background", "relinquish"};
         String vHardWords[] = {"concentration", "communication", "embarrassment", "demonstration", "constellation"};
         char correctGuesses[];
-        
+
         //We're asking the user for input and getting that input via Scanner.
         System.out.println("What difficulty would you like? (0 = Easy, 1 = Intermediate, 2 = Average, 3 = Hard, 4 = Very Hard)");
         usrChoice = choice.nextInt();
@@ -33,32 +33,43 @@ public class Mastermind {
         //This will get a random word from the relevant array,
         //make the array I use to display correct guesses the appropriate size,
         //and give the user a hint as to how long the word will be.
-        if(usrChoice == 0){
+        switch(usrChoice){
+            case 0:
             chosenWord = easyWords[randN];
             size = 4;
             //iterate through array outputting contents
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i) {
                 System.out.println(easyWords[i]);
-        } else if(usrChoice == 1) {
+            }
+            break;
+        case 1:
             chosenWord = medWords[randN];
             size = 7;
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i) {
                 System.out.println(medWords[i]);
-        } else if(usrChoice == 2) {
+            }
+            break;
+        case 2:
             chosenWord = avgWords[randN];
             size = 9;
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i) {
                 System.out.println(avgWords[i]);
-        } else if(usrChoice == 3) {
+            }
+            break;
+        case 3:
             chosenWord = hardWords[randN];
             size = 10;
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i) {
                 System.out.println(hardWords[i]);
-        } else if(usrChoice == 4) {
+            }
+            break;
+        case 4:
             chosenWord = vHardWords[randN];
             size = 13;
-            for(int i = 0; i < 5; ++i)
+            for(int i = 0; i < 5; ++i) {
                 System.out.println(vHardWords[i]);
+            }
+            break;
         }
 
 
@@ -71,7 +82,7 @@ public class Mastermind {
             System.out.println("\nGuess? (" + guesses + " left)" + " and " + correctLetters + " letters correct.");
             guess = input.next();
 
-            //This helps keep the winning condition honest. 
+            //This helps keep the winning condition honest.
             correctCounter = 0;
 
             //This makes it easier to display correct guesses in their place of the chosen word.
@@ -90,7 +101,7 @@ public class Mastermind {
                 }
             }
                 //If the word you guess has as many correct letters in the same spot as the chosen word then you win. This is why we
-                //set the variable to 0. To try and minimize false positives. 
+                //set the variable to 0. To try and minimize false positives.
                 if(correctCounter != chosenWord.length()) {
                     --guesses;
                 } else {
@@ -101,8 +112,8 @@ public class Mastermind {
                 //Just an easy way of iterating through the correct guesses array and displaying the contents.
                 for(int i = 0; i < size; ++i)
                     System.out.print(correctGuesses[i] + " ");
-            
-                //This allows me to keep the correct guess count, change it only if it improves, and trigger the game winning 
+
+                //This allows me to keep the correct guess count, change it only if it improves, and trigger the game winning
                 //condition in the event of a fully correct guess.
                 if(correctCounter > 0 || correctCounter > correctLetters)
                     correctLetters = correctCounter;

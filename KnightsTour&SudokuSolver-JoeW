@@ -29,6 +29,11 @@ n = 81
 
 81 = (3x20) + (3x7)
 81 = (3x10) + (3x10) + (3x7)
+81 = (3x10) + (3x10) + (3x3) + (3x4)
+or
+81 = (3x23) + (3x4)
+or 
+81 = (3x24) + (3x3)
 
 It is important that this math adds up correctly because it means I can let a1 = (3x20) or 60, and a2 = (3x7) or 21 with no loss of 
 squares because in this case each index would represent an individual square. While Warnsdorff's Algorithm runs in linear time, many 

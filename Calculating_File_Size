@@ -1,0 +1,46 @@
+/*
+In this challenge, given the name of a file, print out the size of the file, in bytes.
+ If no file is given, provide a help string to the user that indicates how to use the program.
+ You might need help with taking parameters via the command line or file I/O in C++
+
+*/
+// Libraries:
+#include <iostream>
+#include <fstream>
+// fstream is input/output
+
+// Namespace:
+using namespace std;
+
+int main(){
+
+cout << "Input the name of file:" << endl;
+
+//Function for taking in a file name and ret
+string inputName;
+getline(cin, inputName);
+
+ifstream a_file (inputName); // Creates a variable called a_file
+
+if(a_file.is_open()){
+  cout << "The file is open!" << endl;
+}
+else if(!a_file.is_open()){
+  cout << "The file is not open." << endl;
+}
+
+int totalFileSize;
+
+/*
+do {
+// Get characters from the file as long as we are not at the END of the file
+a_file.get();
+} while(a_file.eof() == 0);
+*/
+a_file.get();
+a_file.get();
+a_file.get();
+cout << a_file.eof() << endl;
+cout << a_file.tellg() << endl;
+
+}
